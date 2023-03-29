@@ -51,7 +51,7 @@ find_package(catkin REQUIRED COMPONENTS
   add_message_files(
     FILES
     mymsg.msg
-#   Message2.msg
+    filtered.msg
   )
 
 ## Generate services in the 'srv' folder
@@ -134,8 +134,8 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-  add_executable(wave_sub src/wave_sub.cpp)
-  add_executable(wave_pub src/wave_pub)
+  add_executable(wave_sub src/wave_sub.cpp src/wave.cpp)
+  add_executable(wave_pub src/wave_pub.cpp src/wave.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
